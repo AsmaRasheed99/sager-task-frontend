@@ -1,0 +1,247 @@
+/* Sidebar.css */
+.nav-item {
+  padding: 12px;
+  border: none;
+  cursor: pointer;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 60px;
+  flex-direction: column;
+  background-color: transparent;
+  transition: background-color 0.2s ease;
+}
+
+.nav-item.active {
+  background-color: #374151;
+}
+
+.nav-item:hover {
+  background-color: #374151;
+}
+
+.nav-icon {
+  width: 20px;
+  height: 20px;
+  filter: brightness(0) invert(1);
+}
+
+.nav-label {
+  margin-top: 4px;
+  font-size: 10px;
+  font-weight: 500;
+  color: #9ca3af;
+}
+
+.nav-item.active .nav-label {
+  color: white;
+}
+
+.toggle-drone-list {
+  margin-top: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.toggle-button {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #ef4444;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 8px rgba(239, 68, 68, 0.3);
+}
+
+.toggle-button:hover {
+  background: #dc2626;
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.4);
+}
+
+.list-icon {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  align-items: center;
+}
+
+.list-line {
+  width: 12px;
+  height: 2px;
+  background: white;
+  border-radius: 1px;
+}
+
+.toggle-label {
+  font-size: 9px;
+  color: #9ca3af;
+  text-align: center;
+  margin-top: 4px;
+  font-weight: 500;
+}
+
+.drone-list-header {
+  padding: 16px;
+  border-bottom: 1px solid #374151;
+  position: relative;
+}
+
+.close-button {
+  position: absolute;
+  right: 16px;
+  top: 16px;
+  background: grey;
+  border: none;
+  color: #9ca3af;
+  cursor: pointer;
+  font-size: 18px;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+}
+
+.close-button:hover {
+  color: white;
+  background-color: #374151;
+}
+
+.header-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.red-line {
+  width: 4px;
+  height: 16px;
+  background: #ef4444;
+}
+
+.title-text {
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #d1d5db;
+}
+
+.subtab-buttons {
+  display: flex;
+  gap: 24px;
+}
+
+.subtab-button {
+  background: none;
+  border: none;
+  color: #6b7280;
+  font-size: 12px;
+  cursor: pointer;
+  padding: 4px 0;
+  border-bottom: 2px solid transparent;
+  font-weight: 400;
+  transition: all 0.2s ease;
+}
+
+.subtab-button.active {
+  color: #ef4444;
+  border-bottom: 2px solid #ef4444;
+  font-weight: 500;
+}
+
+.subtab-button:hover {
+  color: #ef4444;
+}
+
+.drones-list {
+  flex: 1;
+  overflow-y: auto;
+  scrollbar-width: none;
+  msOverflowStyle: none;
+}
+
+.drone-item {
+  padding: 16px;
+  border-bottom: 1px solid #1f2937;
+  background: transparent;
+  cursor: pointer;
+  position: relative;
+  transition: background 0.2s ease;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 16px;
+  align-items: center;
+}
+
+.drone-item:hover {
+  background: #0f172a;
+}
+
+.drone-item.selected {
+  background: #1f2937;
+}
+
+.drone-details {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.drone-name {
+  font-size: 17px;
+  font-weight: 600;
+  color: white;
+  margin-bottom: 8px;
+}
+
+.drone-info-grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 20px;
+  font-size: 11px;
+  color: #9ca3af;
+  line-height: 1;
+  text-align: left;
+}
+
+.drone-info-grid > div > div:last-child {
+  color: #d1d5db;
+}
+
+.status-circle {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 1px solid white;
+  margin-top: 4px;
+}
+
+.no-history {
+  padding: 32px 16px;
+  text-align: center;
+  color: #6b7280;
+}
+
+.no-history > div:first-child {
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+.no-history > div:last-child {
+  font-size: 12px;
+}
