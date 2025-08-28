@@ -4,7 +4,7 @@ import type { DroneWithPath } from "../types/drone";
 import map from "../assets/location-svgrepo-com-2.svg";
 import dashboard from "../assets/dashboard-svgrepo-com-2.svg";
 import drone from "../assets/drone.svg";
-import "../styles/Sidebar.css"; // Import the CSS file
+import "../styles/Sidebar.css"; 
 
 interface SidebarProps {
   activeTab: string;
@@ -16,7 +16,6 @@ const Sidebar: React.FC<SidebarProps> = ({ activeTab, setActiveTab }) => {
   const [isDroneListVisible, setIsDroneListVisible] = useState<boolean>(true);
   const { drones , selectedDrone, setSelectedDrone } = useDrone();
 
-  // Add CSS to hide scrollbar
   React.useEffect(() => {
     const style = document.createElement('style');
     style.textContent = `
@@ -39,7 +38,6 @@ const Sidebar: React.FC<SidebarProps> = ({ activeTab, setActiveTab }) => {
 
   return (
     <div className="sidebar-container">
-      {/* First Sidebar - Navigation (Narrow) */}
       <div className="navigation-sidebar">
         <div
           className={`nav-item ${activeTab === "dashboard" ? "active" : ""}`}
@@ -81,9 +79,7 @@ const Sidebar: React.FC<SidebarProps> = ({ activeTab, setActiveTab }) => {
       <div className={`drone-list-sidebar ${isDroneListVisible ? "" : "hidden"}`}>
         {isDroneListVisible && (
           <>
-            {/* Drone Flying Section Header */}
             <div className="drone-list-header">
-              {/* Close Button */}
               <button
                 onClick={() => setIsDroneListVisible(false)}
                 className="close-button"
@@ -123,14 +119,11 @@ const Sidebar: React.FC<SidebarProps> = ({ activeTab, setActiveTab }) => {
                     onClick={() => setSelectedDrone(drone.path)}
                     className={`drone-item ${selectedDrone === drone.path ? "selected" : ""}`}
                   >
-                    {/* Left Column: Name + Details */}
                     <div className="drone-details">
-                      {/* Drone Name */}
                       <div className="drone-name">
                         {drone.properties.Name}
                       </div>
 
-                      {/* Two-column details */}
                       <div className="drone-info-grid">
                         <div>
                           <div>Serial #</div>
@@ -151,7 +144,6 @@ const Sidebar: React.FC<SidebarProps> = ({ activeTab, setActiveTab }) => {
                       </div>
                     </div>
 
-                    {/* Right Column: Status Circle */}
                     <div
                       className="status-circle"
                       style={{ background: getStatusColor(drone) }}
