@@ -26,3 +26,11 @@ export interface DroneWithPath {
   properties: DroneFeature["properties"];
   path: [number, number][]; // array of the history [lng, lat]
 }
+
+export interface FlightTracker {
+  activeDrones: Map<string, Date>;
+  startFlight: (registration: string) => void;
+  stopFlight: (registration: string) => void;
+  getFlightTime: (registration: string) => string;
+  getActiveDrones: () => string[];
+}
