@@ -14,7 +14,6 @@ function App() {
     const prevTab = prevTabRef.current;
     
     if (activeTab === 'map' && prevTab !== 'map') {
-      console.log('Switching to map, forcing re-render');
       setMapKey(prev => prev + 1);
     }
     
@@ -22,7 +21,6 @@ function App() {
   }, [activeTab]);
 
   const handleTabChange = (newTab : string) => {
-    console.log(`Tab changing from ${activeTab} to ${newTab}`);
     setActiveTab(newTab);
   };
 
