@@ -152,7 +152,9 @@ export const useMap = (
     const img = document.createElement("img");
     img.src = droneIcon;
     img.alt = "drone";
+    
     el.appendChild(img);
+
 
     el.addEventListener("click", () => setSelectedDrone(drone.path));
 
