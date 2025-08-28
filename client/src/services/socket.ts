@@ -1,6 +1,6 @@
 import { io, Socket } from "socket.io-client";
 
-const SOCKET_URL = "http://localhost:9013";
+const SOCKET_URL = import.meta.env.VITE_SOCKETS_URL
 
 let socket: Socket | null = null;
 
