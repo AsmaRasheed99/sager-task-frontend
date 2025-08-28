@@ -12,6 +12,8 @@ interface DuplicateDrones {
 interface DroneContextType {
   drones: DroneWithPath[];
   duplicates: DuplicateDrones;
+  selectedDrone: [number, number][];
+  setSelectedDrone: React.Dispatch<React.SetStateAction<[number, number][]>>;
 }
 
 const DroneContext = createContext<DroneContextType | undefined>(undefined);
@@ -43,7 +45,8 @@ export const DroneProvider: React.FC<{children:React.ReactNode}> = ({
     children,
 }) =>{
     const [drones, setDrones] = useState<DroneWithPath[]>([]);
-    console.log(drones);
+      const [selectedDrone, setSelectedDrone] = useState<[number , number][]>([]);
+    
 
     const duplicates = findDuplicateDronesByRegistration(drones);
 
@@ -92,7 +95,7 @@ export const DroneProvider: React.FC<{children:React.ReactNode}> = ({
     },[]);
 
     return (
-      <DroneContext.Provider value={{ drones, duplicates }}>
+      <DroneContext.Provider value={{ drones, duplicates, selectedDrone, setSelectedDrone }}>
         {children}
       </DroneContext.Provider>
     );
