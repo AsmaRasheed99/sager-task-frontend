@@ -1,0 +1,85 @@
+/* DroneMap.css */
+.drone-map-container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.drone-marker {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.drone-marker img {
+  width: 24px;
+  height: 24px;
+}
+
+.mapboxgl-popup-content {
+  background: black !important;
+  color: white !important;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 13px;
+}
+
+.mapboxgl-popup-tip {
+  border-top-color: black !important;
+  border-bottom-color: black !important;
+}
+
+.popup-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.popup-title {
+  margin: 0 0 8px 0;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.popup-info {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.popup-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.popup-section span:first-child {
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+
+.map-wrapper {
+  flex: 1;
+  position: relative; /* important so absolute children work */
+  min-width: 0;       /* important for flex layouts */
+}
+
+.drone-map-container {
+  width: 100%;
+  height: 100%;      /* map always fills wrapper */
+}
+
+.red-drone-counter {
+  position: fixed;
+  bottom: 20px;
+  right: 10px;
+  background: rgba(255,0,0,0.8);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  z-index: 999;
+  pointer-events: none;
+}
