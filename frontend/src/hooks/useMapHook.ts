@@ -155,7 +155,6 @@ export const useMap = (
     
     el.appendChild(img);
 
-
     el.addEventListener("click", () => setSelectedDrone(drone.path));
 
     const marker = new mapboxgl.Marker(el)
