@@ -188,5 +188,5 @@ export const useMap = (
     }
   };
 
-return { cleanup, getRedDroneCount };
+return {  getRedDroneCount };
 };

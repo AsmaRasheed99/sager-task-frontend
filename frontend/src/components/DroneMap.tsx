@@ -5,13 +5,9 @@ import "mapbox-gl/dist/mapbox-gl.css"; // Ensure Mapbox CSS is loaded globally
 
 const DroneMap = () => {
   const mapContainer = useRef<HTMLDivElement>(null);
-  const { cleanup, getRedDroneCount } = useMap(mapContainer);
+  const {  getRedDroneCount } = useMap(mapContainer);
   const [redCount, setRedCount] = useState(0);
 
-  // Cleanup on unmount
-  useEffect(() => {
-    return () => cleanup();
-  }, [cleanup]);
 
   // Update red drone counter every second
   useEffect(() => {
